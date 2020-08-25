@@ -27,31 +27,32 @@ namespace guessing_game
                     Console.WriteLine("Congrats You Guessed the Secret Number!");
                     break;
                 }
+
+
+                else if (secretNumber > userInput)
+                {
+                    Console.WriteLine("User Guess is to low");
+                }
                 else
                 {
-                    numberOfUserGuesses--;
-                    Console.WriteLine("Wrong guess");
-                    userGuesses.Add(userInput);
-                    Console.Write("Current Guesses: ");
-                    for (int i = 0; i < userGuesses.Count; i++)
-                    {
-                        Console.Write(userGuesses[i] + " ");
-                    }
-                    Console.WriteLine();
-                    userInput = getUserInput(numberOfUserGuesses);
-
-
+                    Console.WriteLine("Your Guess is to high");
                 }
-            }
-            // if (secretNumber == doubleUserGuess)
-            // {
-            //     Console.WriteLine("Congrats! You guessed the secret number!");
+                numberOfUserGuesses--;
+                Console.WriteLine("Wrong guess");
+                userGuesses.Add(userInput);
+                Console.Write("Current Guesses: ");
+                for (int i = 0; i < userGuesses.Count; i++)
+                {
+                    Console.Write(userGuesses[i] + " ");
+                }
+                Console.WriteLine();
+                userInput = getUserInput(numberOfUserGuesses);
 
-            // }
-            // else
-            // {
-            //     Console.WriteLine("Wrong Guess");
-            // }
+
+
+            }
+
+            Console.WriteLine($"Thanks for playing, the secret number was {secretNumber}");
 
 
 
