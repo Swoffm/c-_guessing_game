@@ -6,17 +6,45 @@ namespace guessing_game
     {
         static void Main(string[] args)
         {
-            phaseOne();
+            guessGame();
         }
 
-        static void phaseOne()
+        static void guessGame()
         {
-            Console.WriteLine("Guess a secret number");
-            Console.Write("Enter a number: ");
-            string userGuess = Console.ReadLine();
-            Console.WriteLine($"Your Guess is, {userGuess}");
+            double doubleUserGuess = 0;
+            int secretNumber = 5;
+            bool userDataType = false;
+
+            while (!userDataType)
+            {
+                Console.WriteLine("Guess a secret number");
+                Console.Write("Enter a number: ");
+                string stringUserGuess = Console.ReadLine();
+
+                if (stringUserGuess.ToLower() == "x")
+                {
+                    Console.WriteLine("Thanks for Playing");
+                    break;
+                }
+
+                userDataType = double.TryParse(stringUserGuess, out doubleUserGuess);
+
+            }
+
+            if (secretNumber == doubleUserGuess)
+            {
+                Console.WriteLine("Congrats! You guessed the secret number!");
+
+            }
+            else
+            {
+                Console.WriteLine("Wrong Guess");
+            }
+
+
 
         }
+
 
 
     }
