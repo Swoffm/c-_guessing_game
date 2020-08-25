@@ -12,13 +12,31 @@ namespace guessing_game
         static void guessGame()
         {
 
+            int numberOfUserGuesses = 0;
+
+            string userDifficulty = getDifficulty();
+            if (userDifficulty == "easy")
+            {
+                numberOfUserGuesses = 8;
+
+            }
+            else if (userDifficulty == "medium")
+            {
+                numberOfUserGuesses = 6;
+
+            }
+            else if (userDifficulty == "hard")
+            {
+                numberOfUserGuesses = 4;
+
+            }
+
 
             int secretNumber = new Random().Next(1, 100);
-            int numberOfUserGuesses = 5;
             List<double> userGuesses = new List<double>();
             double userInput = getUserInput(numberOfUserGuesses);
 
-            while (numberOfUserGuesses > 1 & numberOfUserGuesses <= 5)
+            while (numberOfUserGuesses > 1)
             {
 
 
@@ -85,6 +103,24 @@ namespace guessing_game
             return doubleUserGuess;
 
 
+        }
+
+        static string getDifficulty()
+        {
+            string userDifficulty = "";
+            while (userDifficulty.ToLower() != "easy" || userDifficulty.ToLower() != "medium" || userDifficulty.ToLower() != "hard")
+            {
+
+                Console.Write("Select Difficulty Level: Easy, Medium, Hard: ");
+                userDifficulty = Console.ReadLine();
+
+                if (userDifficulty.ToLower() == "easy" || userDifficulty.ToLower() == "medium" || userDifficulty.ToLower() == "hard")
+                {
+                    break;
+                }
+
+            }
+            return userDifficulty;
         }
 
 
