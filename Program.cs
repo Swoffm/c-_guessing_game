@@ -11,13 +11,17 @@ namespace guessing_game
 
         static void guessGame()
         {
-            double userInput = getUserInput();
+
+
             int secretNumber = 5;
             int numberOfUserGuesses = 1;
             List<double> userGuesses = new List<double>();
+            double userInput = getUserInput(numberOfUserGuesses);
 
             while (numberOfUserGuesses >= 1 & numberOfUserGuesses <= 4)
             {
+
+
                 if (userInput == secretNumber)
                 {
                     Console.WriteLine("Congrats You Guessed the Secret Number!");
@@ -34,7 +38,7 @@ namespace guessing_game
                         Console.Write(userGuesses[i] + " ");
                     }
                     Console.WriteLine();
-                    userInput = getUserInput();
+                    userInput = getUserInput(numberOfUserGuesses);
 
 
                 }
@@ -54,7 +58,7 @@ namespace guessing_game
         }
 
 
-        static double getUserInput()
+        static double getUserInput(int currentGuess)
         {
             double doubleUserGuess = 0;
             bool userDataType = false;
@@ -62,7 +66,7 @@ namespace guessing_game
             while (!userDataType)
             {
                 Console.WriteLine("Guess a secret number");
-                Console.Write("Enter a number: ");
+                Console.Write($"Enter a number ({currentGuess}): ");
                 string stringUserGuess = Console.ReadLine();
 
                 if (stringUserGuess.ToLower() == "x")
