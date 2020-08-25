@@ -30,13 +30,17 @@ namespace guessing_game
                 numberOfUserGuesses = 4;
 
             }
+            else if (userDifficulty == "cheater")
+            {
+                numberOfUserGuesses = -5;
+            }
 
 
             int secretNumber = new Random().Next(1, 100);
             List<double> userGuesses = new List<double>();
             double userInput = getUserInput(numberOfUserGuesses);
 
-            while (numberOfUserGuesses > 1)
+            while (numberOfUserGuesses > 1 || numberOfUserGuesses < -3)
             {
 
 
@@ -85,7 +89,14 @@ namespace guessing_game
             while (!userDataType)
             {
                 Console.WriteLine("Guess a secret number");
-                Console.Write($"Enter a number ({currentGuess}): ");
+                if (currentGuess > 0)
+                {
+                    Console.Write($"Enter a number ({currentGuess}): ");
+                }
+                else
+                {
+                    Console.Write($"Enter a number: ");
+                }
                 string stringUserGuess = Console.ReadLine();
 
                 if (stringUserGuess.ToLower() == "x")
@@ -111,16 +122,16 @@ namespace guessing_game
             while (userDifficulty.ToLower() != "easy" || userDifficulty.ToLower() != "medium" || userDifficulty.ToLower() != "hard")
             {
 
-                Console.Write("Select Difficulty Level: Easy, Medium, Hard: ");
+                Console.Write("Select Difficulty Level: Easy, Medium, Hard, Cheater: ");
                 userDifficulty = Console.ReadLine();
 
-                if (userDifficulty.ToLower() == "easy" || userDifficulty.ToLower() == "medium" || userDifficulty.ToLower() == "hard")
+                if (userDifficulty.ToLower() == "easy" || userDifficulty.ToLower() == "medium" || userDifficulty.ToLower() == "hard" || userDifficulty.ToLower() == "cheater")
                 {
                     break;
                 }
 
             }
-            return userDifficulty;
+            return userDifficulty.ToLower();
         }
 
 
