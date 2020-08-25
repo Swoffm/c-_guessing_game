@@ -13,12 +13,12 @@ namespace guessing_game
         {
 
 
-            int secretNumber = 5;
-            int numberOfUserGuesses = 1;
+            int secretNumber = new Random().Next(1, 100);
+            int numberOfUserGuesses = 5;
             List<double> userGuesses = new List<double>();
             double userInput = getUserInput(numberOfUserGuesses);
 
-            while (numberOfUserGuesses >= 1 & numberOfUserGuesses <= 4)
+            while (numberOfUserGuesses > 1 & numberOfUserGuesses <= 5)
             {
 
 
@@ -29,7 +29,7 @@ namespace guessing_game
                 }
                 else
                 {
-                    numberOfUserGuesses++;
+                    numberOfUserGuesses--;
                     Console.WriteLine("Wrong guess");
                     userGuesses.Add(userInput);
                     Console.Write("Current Guesses: ");
