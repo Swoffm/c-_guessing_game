@@ -1,0 +1,13 @@
+C:\Users\gavin\workspace\guessing_game\bin\Debug\netcoreapp3.1\guessing_game.exe
+C:\Users\gavin\workspace\guessing_game\bin\Debug\netcoreapp3.1\guessing_game.deps.json
+C:\Users\gavin\workspace\guessing_game\bin\Debug\netcoreapp3.1\guessing_game.runtimeconfig.json
+C:\Users\gavin\workspace\guessing_game\bin\Debug\netcoreapp3.1\guessing_game.runtimeconfig.dev.json
+C:\Users\gavin\workspace\guessing_game\bin\Debug\netcoreapp3.1\guessing_game.dll
+C:\Users\gavin\workspace\guessing_game\bin\Debug\netcoreapp3.1\guessing_game.pdb
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.csprojAssemblyReference.cache
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.AssemblyInfoInputs.cache
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.AssemblyInfo.cs
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.csproj.CoreCompileInputs.cache
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.dll
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.pdb
+C:\Users\gavin\workspace\guessing_game\obj\Debug\netcoreapp3.1\guessing_game.genruntimeconfig.cache
